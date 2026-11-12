@@ -17,6 +17,9 @@
       <nav class="nav-links">
         <a href="index.html" class="active">All Concepts</a>
         <a href="topics/photons.html">01 · Photons</a>
+        <a href="topics/human-eye.html">02 · Human Eye</a>
+        <a href="topics/reflection-scattering.html">03 · Reflection &amp; Scattering</a>
+        <a href="topics/light-spectrum.html">04 · Colors &amp; Spectrum</a>
         <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
       </nav>
     </div>
@@ -28,10 +31,10 @@
       <h1>Understanding How the Universe Works, One Concept at a Time</h1>
       <p class="lead">
         A living collection of first-principles explanations, visual diagrams, and real-time browser simulations
-        covering the physics concepts I am learning—starting with the birth, room journey, and final fate of photons.
+        covering the physics concepts I am learning—from photons and vision to reflection, scattering, and the full electromagnetic spectrum.
       </p>
       <div class="hero-meta">
-        <span>📘 1 Interactive Topic Live</span>
+        <span>📘 4 Interactive Topics Live</span>
         <span>🧪 Canvas Simulations</span>
         <span>🌗 Dark &amp; Light Mode</span>
       </div>
@@ -40,7 +43,7 @@
     <section aria-label="Physics Topics">
       <div class="hub-toolbar">
         <div class="search-box">
-          <input id="topic-search" type="search" placeholder="Search concepts (e.g., photon, room, heat, LED)…" aria-label="Search physics concepts" />
+          <input id="topic-search" type="search" placeholder="Search concepts (e.g., photon, eye, cornea, retina, heat)…" aria-label="Search physics concepts" />
         </div>
         <div class="filter-pills">
           <button class="pill active" type="button" data-filter="all">All</button>
@@ -71,10 +74,64 @@
           </div>
         </a>
 
+        <!-- Topic 02: Live -->
+        <a class="topic-card" href="topics/human-eye.html" data-category="quantum-optics">
+          <div class="card-top">
+            <span class="card-num">TOPIC 02</span>
+            <span class="badge badge-live">Live · Interactive</span>
+          </div>
+          <h3>How the Human Eye Works</h3>
+          <p>
+            How the eye focuses light, rods vs. cones, and the molecular switch that turns photons into brain signals.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Optics</span>
+            <span class="tag">Eye Ray-Tracing</span>
+            <span class="tag">Rods &amp; Cones</span>
+            <span class="tag">Retinal Switch</span>
+          </div>
+        </a>
+
+        <!-- Topic 03: Live -->
+        <a class="topic-card" href="topics/reflection-scattering.html" data-category="quantum-optics">
+          <div class="card-top">
+            <span class="card-num">TOPIC 03</span>
+            <span class="badge badge-live">Live · Interactive</span>
+          </div>
+          <h3>Reflection and Scattering of Light</h3>
+          <p>
+            Law of reflection (mirrors vs. rough surfaces), Rayleigh scattering (why the sky is blue &amp; sunsets are red), and Mie scattering (why clouds are white).
+          </p>
+          <div class="card-tags">
+            <span class="tag">Wave Optics</span>
+            <span class="tag">Reflection Lab</span>
+            <span class="tag">Rayleigh Scattering</span>
+            <span class="tag">Blue Sky &amp; Sunset</span>
+          </div>
+        </a>
+
+        <!-- Topic 04: Live -->
+        <a class="topic-card" href="topics/light-spectrum.html" data-category="quantum-optics">
+          <div class="card-top">
+            <span class="card-num">TOPIC 04</span>
+            <span class="badge badge-live">Live · Interactive</span>
+          </div>
+          <h3>Colors &amp; the Light Spectrum</h3>
+          <p>
+            Visible rainbow colors (380–750 nm) and all 6 invisible bands of light: Radio, Microwaves, Infrared, UV, X-Rays, and Gamma Rays.
+          </p>
+          <div class="card-tags">
+            <span class="tag">EM Spectrum</span>
+            <span class="tag">Wave Simulator</span>
+            <span class="tag">Visible Colors</span>
+            <span class="tag">Invisible Light</span>
+          </div>
+        </a>
+
         <!-- Upcoming Placeholders for Scalability -->
         <div class="topic-card upcoming" data-category="quantum-optics">
           <div class="card-top">
-            <span class="card-num">TOPIC 02</span>
+            <span class="card-num">TOPIC 05</span>
             <span class="badge badge-planned">Upcoming</span>
           </div>
           <h3>Electrons, Energy Bands &amp; Semiconductors</h3>
@@ -90,7 +147,7 @@
 
         <div class="topic-card upcoming" data-category="thermo">
           <div class="card-top">
-            <span class="card-num">TOPIC 03</span>
+            <span class="card-num">TOPIC 06</span>
             <span class="badge badge-planned">Upcoming</span>
           </div>
           <h3>Heat, Phonons &amp; Entropy</h3>
@@ -101,37 +158,6 @@
           <div class="card-tags">
             <span class="tag">Thermodynamics</span>
             <span class="tag">Statistical Mechanics</span>
-          </div>
-        </div>
-
-        <div class="topic-card upcoming" data-category="relativity">
-          <div class="card-top">
-            <span class="card-num">TOPIC 04</span>
-            <span class="badge badge-planned">Upcoming</span>
-          </div>
-          <h3>Special Relativity &amp; Spacetime</h3>
-          <p>
-            Why the speed of light <i>c</i> is invariant for all observers, time dilation, length contraction,
-            <i>E = mc²</i>, and why photons experience zero proper time.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Relativity</span>
-            <span class="tag">Null Geodesics</span>
-          </div>
-        </div>
-
-        <div class="topic-card upcoming" data-category="mechanics">
-          <div class="card-top">
-            <span class="card-num">TOPIC 05</span>
-            <span class="badge badge-planned">Upcoming</span>
-          </div>
-          <h3>Waves, Interference &amp; Double-Slit Intuition</h3>
-          <p>
-            Superposition, phase, diffraction, and how single photons build up interference patterns one click at a time.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Wave Optics</span>
-            <span class="tag">Quantum Amplitude</span>
           </div>
         </div>
       </div>

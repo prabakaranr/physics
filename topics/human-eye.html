@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How the Human Eye Works — Optics &amp; Vision | Physics Notes</title>
+  <meta name="description" content="A simple, visual guide to how the human eye works: focusing light, rods and cones, and the molecular switch of vision." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge">φ</span>
+        <span>Physics Learning Notes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">All Concepts</a>
+        <a href="photons.html">01 · Photons</a>
+        <a href="human-eye.html" class="active">02 · Human Eye</a>
+        <a href="reflection-scattering.html">03 · Reflection &amp; Scattering</a>
+        <a href="light-spectrum.html">04 · Colors &amp; Spectrum</a>
+        <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 920px;">
+    <section class="hero" style="padding-bottom: 1.5rem;">
+      <div class="hero-eyebrow">Topic 02 · Light &amp; Vision</div>
+      <h1>How the Human Eye Works</h1>
+      <p class="lead">
+        A simple, interactive look at how light is focused, how retina cells detect photons,
+        and how light turns into electrical signals for your brain.
+      </p>
+    </section>
+
+    <article class="article-content">
+      <!-- STEP 1: FOCUSING LIGHT -->
+      <section id="focusing-light">
+        <h2>1. Focusing Light: The Cornea and Lens</h2>
+        <p>
+          The eye acts like a camera with two lenses that create a sharp, <strong>upside-down image</strong> on the retina:
+        </p>
+        <ul>
+          <li><strong>Cornea (Front Window):</strong> Does ~70% of the focusing by bending incoming light rays strongly.</li>
+          <li><strong>Pupil (Aperture):</strong> Expands in darkness to let more light in, and shrinks in bright light.</li>
+          <li><strong>Crystalline Lens:</strong> Changes shape (thicker for near objects, flatter for far objects) to fine-tune focus.</li>
+        </ul>
+
+        <!-- SIMULATION 1 -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Interactive Eye Ray-Tracing</div>
+            <div class="sim-tabs">
+              <button id="correct-btn" class="sim-btn" type="button" disabled>Glasses Not Needed</button>
+            </div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="eye-canvas" width="820" height="380"></canvas>
+          </div>
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="obj-dist-slider">Object Distance:</label>
+              <input id="obj-dist-slider" type="range" min="90" max="480" step="5" value="320" />
+              <strong id="obj-dist-val" style="font-family: var(--font-mono); color: var(--accent);">4.0 m</strong>
+            </div>
+            <div class="control-group">
+              <label for="defect-select">Vision:</label>
+              <select id="defect-select">
+                <option value="normal">Normal Vision</option>
+                <option value="myopia">Nearsighted (Myopia)</option>
+                <option value="hyperopia">Farsighted (Hyperopia)</option>
+              </select>
+            </div>
+          </div>
+          <div id="optics-readout" class="sim-readout"></div>
+        </div>
+
+        <div class="cards-2col" style="margin-top: 1rem;">
+          <div class="info-card">
+            <h4>👓 Nearsighted (Myopia)</h4>
+            <p>The eyeball is too long. Rays focus <strong>in front</strong> of the retina. A <em>concave (diverging) lens</em> spreads the rays to fix it.</p>
+          </div>
+          <div class="info-card">
+            <h4>🔎 Farsighted (Hyperopia)</h4>
+            <p>The eyeball is too short. Rays focus <strong>behind</strong> the retina. A <em>convex (converging) lens</em> bends the rays inward to fix it.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 2: RODS & CONES -->
+      <section id="rods-and-cones">
+        <h2>2. Sensation: Rods vs. Cones</h2>
+        <p>The retina contains two types of light detectors:</p>
+        <div class="cards-2col">
+          <div class="info-card">
+            <h4>🌑 Rods (~120 Million)</h4>
+            <p>
+              • Work in dim light &amp; night vision.<br />
+              • Very sensitive (can detect a single photon!).<br />
+              • See in black, white, and shades of gray.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>🎨 Cones (~6 Million)</h4>
+            <p>
+              • Work in bright daylight.<br />
+              • Concentrated in the center for sharp reading vision.<br />
+              • Three types detect <strong>Red, Green, and Blue</strong> colors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 3: THE QUANTUM SWITCH -->
+      <section id="quantum-switch">
+        <h2>3. The Molecular Switch: From Photon to Nerve Signal</h2>
+        <p>
+          Inside every rod and cone is a small molecule called <strong>retinal</strong>.
+          When a single photon strikes it, the molecule snaps from <strong>bent</strong> to <strong>straight</strong> in less than a trillionth of a second!
+        </p>
+        <p>
+          This shape flip shuts ion channels in the cell, creating an electrical voltage drop that fires down the <strong>optic nerve</strong> to your brain.
+        </p>
+
+        <!-- SIMULATION 2 -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Molecule Snapping Switch (11-cis → all-trans)</div>
+            <div class="sim-tabs">
+              <button id="fire-photon-btn" class="sim-btn primary" type="button">⚡ Fire Single Photon</button>
+              <button id="toggle-light-dark-btn" class="sim-btn" type="button">☀️ Switch to Bright Light</button>
+            </div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="transduction-canvas" width="820" height="280"></canvas>
+          </div>
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="cone-wavelength-slider">Color / Wavelength:</label>
+              <input id="cone-wavelength-slider" type="range" min="390" max="670" step="5" value="530" />
+              <strong id="cone-wavelength-val" style="font-family: var(--font-mono); color: var(--accent);">530 nm</strong>
+            </div>
+          </div>
+          <div id="transduction-readout" class="sim-readout"></div>
+        </div>
+      </section>
+
+      <!-- STEP 4: BLIND SPOT TEST -->
+      <section id="blind-spot">
+        <h2>4. Try It: Find Your Blind Spot</h2>
+        <p>
+          Where the optic nerve exits the back of your eye, there are no light receptors. You can easily test it:
+        </p>
+        <div class="callout" style="text-align: center; padding: 1.5rem 1rem;">
+          <p style="margin: 0 auto 1rem; max-width: 48ch;">
+            Close your <strong>left eye</strong>, look at the <strong>+</strong> with your right eye, and move your head closer or farther until the <strong>red dot vanishes</strong>!
+          </p>
+          <div style="display: flex; justify-content: space-around; align-items: center; max-width: 360px; margin: 0 auto; padding: 1rem; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-strong);">
+            <span style="font-size: 2.2rem; font-weight: 800; color: var(--accent);">+</span>
+            <span style="font-size: 2rem; color: #f43f5e;">●</span>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Physics Learning Notes · <a href="../index.html">Back to All Concepts</a></span>
+      <span>Topic 02: Human Eye · Simplified</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/eye-sim.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflection and Scattering of Light | Physics Notes</title>
+  <meta name="description" content="A simple, interactive guide to how light reflects off surfaces and scatters in the atmosphere—why mirrors reflect, why the sky is blue, and why sunsets are red." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge">φ</span>
+        <span>Physics Learning Notes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">All Concepts</a>
+        <a href="photons.html">01 · Photons</a>
+        <a href="human-eye.html">02 · Human Eye</a>
+        <a href="reflection-scattering.html" class="active">03 · Reflection &amp; Scattering</a>
+        <a href="light-spectrum.html">04 · Colors &amp; Spectrum</a>
+        <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 920px;">
+    <section class="hero" style="padding-bottom: 1.5rem;">
+      <div class="hero-eyebrow">Topic 03 · Wave Optics</div>
+      <h1>Reflection and Scattering of Light</h1>
+      <p class="lead">
+        A simple, interactive look at how light bounces off surfaces (mirrors vs. walls)
+        and how tiny particles scatter light to paint our daytime sky blue and our sunsets red.
+      </p>
+    </section>
+
+    <article class="article-content">
+      <!-- SECTION 1: REFLECTION -->
+      <section id="reflection">
+        <h2>1. Reflection: The Law of Bouncing Light</h2>
+        <p>
+          Whenever light hits a boundary, it bounces off according to a simple universal rule:
+        </p>
+
+        <div class="math-card">
+          <div class="math-expr">
+            Angle of Incidence (<i>θ<sub>i</sub></i>) = Angle of Reflection (<i>θ<sub>r</sub></i>)
+          </div>
+          <div class="math-note">
+            Measured relative to the <strong>Normal</strong> (a perpendicular 90° line to the surface).
+          </div>
+        </div>
+
+        <!-- SIMULATION 1: REFLECTION LAB -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Interactive Reflection Lab</div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="reflection-canvas" width="820" height="280"></canvas>
+          </div>
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="refl-angle-slider">Angle of Incidence (θi):</label>
+              <input id="refl-angle-slider" type="range" min="5" max="80" step="1" value="45" />
+              <strong id="refl-angle-val" style="font-family: var(--font-mono); color: var(--accent);">45°</strong>
+            </div>
+            <div class="control-group">
+              <label for="surface-select">Surface Type:</label>
+              <select id="surface-select">
+                <option value="specular">Smooth Mirror (Specular Reflection)</option>
+                <option value="diffuse">Rough Wall / Paper (Diffuse Reflection)</option>
+              </select>
+            </div>
+          </div>
+          <div id="refl-readout" class="sim-readout"></div>
+        </div>
+
+        <div class="cards-2col" style="margin-top: 1rem;">
+          <div class="info-card">
+            <h4>🪞 Specular Reflection (Mirror)</h4>
+            <p>
+              On a flat, smooth surface, all parallel incoming rays reflect in the exact same direction.
+              This preserves the image and creates a clear mirror reflection.
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>📄 Diffuse Reflection (Wall, Paper, Table)</h4>
+            <p>
+              Microscopic bumps bounce rays in all random directions.
+              You don't see your reflection, but you <strong>can see the object from any angle</strong>!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: SCATTERING -->
+      <section id="scattering">
+        <h2>2. Scattering: Why Is the Sky Blue &amp; Sunsets Red?</h2>
+        <p>
+          <strong>Scattering</strong> happens when light hits particles (like air molecules or dust) and gets deflected in all directions.
+        </p>
+
+        <div class="callout amber">
+          <div class="callout-title">The 1/λ⁴ Rayleigh Rule: Blue Scatters 10× More than Red!</div>
+          Tiny air molecules (N₂ and O₂) are much smaller than light wavelengths.
+          The amount of scattering is proportional to <strong>1 / λ⁴</strong> (wavelength to the fourth power):
+          <br /><br />
+          • <strong>Short blue wavelengths (~400 nm)</strong> scatter roughly <strong>10 times more</strong> than long red wavelengths (~700 nm).<br />
+          • <strong>During the day:</strong> Scattered blue photons fill the whole sky, making it appear bright blue from every direction!<br />
+          • <strong>At sunset:</strong> Sunlight must travel through ~10× more atmosphere to reach you. Almost all the blue light scatters away before it reaches your eyes, leaving only the <strong>surviving red and orange rays</strong>!
+        </div>
+
+        <!-- SIMULATION 2: SCATTERING LAB -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Interactive Sky &amp; Sunset Scattering Lab</div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="scattering-canvas" width="820" height="280"></canvas>
+          </div>
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="sun-time-slider">Sun Altitude:</label>
+              <input id="sun-time-slider" type="range" min="5" max="85" step="1" value="75" />
+              <strong id="sun-time-val" style="font-family: var(--font-mono); color: var(--accent);">75° — Noon (High Sun)</strong>
+            </div>
+            <div class="control-group">
+              <label>
+                <input id="cloud-toggle" type="checkbox" />
+                Add Clouds (Mie Scattering)
+              </label>
+            </div>
+          </div>
+          <div id="scat-readout" class="sim-readout"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: MIE SCATTERING -->
+      <section id="mie-scattering">
+        <h2>3. Why Are Clouds White? (Mie Scattering)</h2>
+        <p>
+          Water droplets in clouds and fog are <strong>much larger than light wavelengths</strong>.
+        </p>
+        <p>
+          Unlike tiny air molecules, cloud droplets scatter <strong>all colors of light equally</strong>.
+          When Red, Green, and Blue scatter together in equal amounts, your eyes combine them to see <strong>pure white</strong>!
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type of Scattering</th>
+                <th>Particle Size</th>
+                <th>What It Does</th>
+                <th>Everyday Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rayleigh Scattering</strong></td>
+                <td>Smaller than wavelength (air molecules)</td>
+                <td>Scatters short blue wavelengths ~10× more than red</td>
+                <td><strong>Blue daytime sky, Red sunsets</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Mie Scattering</strong></td>
+                <td>Equal to or larger than wavelength (water drops, dust)</td>
+                <td>Scatters all visible colors equally</td>
+                <td><strong>White clouds, fog, milk</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Physics Learning Notes · <a href="../index.html">Back to All Concepts</a></span>
+      <span>Topic 03: Reflection &amp; Scattering · Built for GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/scattering-sim.js"></script>
+</body>
+</html>

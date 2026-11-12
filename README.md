@@ -12,6 +12,27 @@ An interactive, static GitHub Pages site documenting physics concepts from first
    - Step-by-step lifecycle of light inside a room (~13 ns per bounce, reflection, color absorption, refraction, thermal phonons, infrared re-emission, and window escape)
    - Interactive Room Photon Simulator
 
+2. **[How the Human Eye Works](topics/human-eye.html)**
+   - Cornea and lens optics, pupil aperture, and inverted retinal imaging
+   - Interactive Eye Ray-Tracing & Accommodation Simulator (Normal, Myopia, Hyperopia, corrective lenses)
+   - Rods (~120M) vs. Cones (~6M)
+   - The Molecular Switch (retinal 11-cis to all-trans isomerization) & Interactive Lab
+   - Interactive Blind Spot test
+
+3. **[Reflection and Scattering of Light](topics/reflection-scattering.html)**
+   - The Law of Reflection: Angle of incidence = Angle of reflection ($\theta_i = \theta_r$)
+   - Specular (mirror) vs. Diffuse (rough wall/paper) reflection & Interactive Reflection Lab
+   - Rayleigh scattering ($1/\lambda^4$ rule) — why the sky is blue and sunsets are red
+   - Interactive Sky & Sunset Scattering Lab
+   - Mie scattering — why clouds and fog appear white
+
+4. **[Colors & the Spectrum of Light (Visible & Invisible)](topics/light-spectrum.html)**
+   - The full electromagnetic spectrum from Radio to Gamma rays
+   - Interactive Full Spectrum Wave Simulator (wavelength vs. frequency & energy)
+   - The visible rainbow sliver (380 nm – 750 nm) & Interactive Color Wavelength Tuner
+   - The 6 invisible bands of light (Radio, Microwave, Infrared, UV, X-Ray, Gamma Ray)
+   - Why human eyes cannot detect invisible light
+
 ## Structure
 
 ```text

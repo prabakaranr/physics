@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colors &amp; the Light Spectrum (Visible &amp; Invisible) | Physics Notes</title>
+  <meta name="description" content="A simple, interactive guide to all colors and wavelengths of light—from visible rainbow colors to invisible radio waves, microwaves, infrared, UV, X-rays, and gamma rays." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge">φ</span>
+        <span>Physics Learning Notes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">All Concepts</a>
+        <a href="photons.html">01 · Photons</a>
+        <a href="human-eye.html">02 · Human Eye</a>
+        <a href="reflection-scattering.html">03 · Reflection &amp; Scattering</a>
+        <a href="light-spectrum.html" class="active">04 · Colors &amp; Spectrum</a>
+        <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 920px;">
+    <section class="hero" style="padding-bottom: 1.5rem;">
+      <div class="hero-eyebrow">Topic 04 · Electromagnetic Waves</div>
+      <h1>Colors &amp; the Spectrum of Light</h1>
+      <p class="lead">
+        All light is made of the same electromagnetic waves. The only difference is <strong>wavelength</strong>.
+        Human eyes can only see a tiny rainbow sliver (380–750 nm)—everything else is invisible to us!
+      </p>
+    </section>
+
+    <article class="article-content">
+      <!-- SECTION 1: FULL SPECTRUM SIMULATOR -->
+      <section id="full-spectrum">
+        <h2>1. The Full Electromagnetic Spectrum (Visible &amp; Invisible)</h2>
+        <p>
+          Drag the slider or click the buttons below to travel from giant, low-energy <strong>Radio Waves</strong> (kilometers long)
+          down to atomic, high-energy <strong>Gamma Rays</strong> (picometers small).
+        </p>
+
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Interactive Spectrum Wave Simulator</div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="full-em-canvas" width="820" height="230"></canvas>
+          </div>
+          <div class="sim-controls" style="flex-direction: column; align-items: stretch; gap: 0.75rem;">
+            <div class="control-group" style="justify-content: space-between;">
+              <label for="em-log-slider">Wavelength Scale (Radio ← → Gamma):</label>
+              <input id="em-log-slider" type="range" min="-13" max="3" step="0.05" value="-6.25" style="flex: 1; max-width: 450px;" />
+            </div>
+            <div class="sim-tabs" style="justify-content: center;">
+              <button class="sim-btn" type="button" data-em-preset="1.5">📻 Radio</button>
+              <button class="sim-btn" type="button" data-em-preset="-1.2">📡 Microwave</button>
+              <button class="sim-btn" type="button" data-em-preset="-4.8">🔥 Infrared</button>
+              <button class="sim-btn active" type="button" data-em-preset="-6.25">👁️ Visible</button>
+              <button class="sim-btn" type="button" data-em-preset="-7.4">☀️ UV</button>
+              <button class="sim-btn" type="button" data-em-preset="-10">🦴 X-Ray</button>
+              <button class="sim-btn" type="button" data-em-preset="-12.5">💥 Gamma</button>
+            </div>
+          </div>
+          <div id="full-em-readout" class="sim-readout"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: VISIBLE COLORS -->
+      <section id="visible-colors">
+        <h2>2. The Visible Colors: The Rainbow Sliver (380 nm – 750 nm)</h2>
+        <p>
+          This is the only light human eye cone cells can detect.
+          <strong>Red</strong> has the longest wavelength and lowest energy; <strong>Violet</strong> has the shortest wavelength and highest energy!
+        </p>
+
+        <div class="sim-panel" style="padding: 1.25rem;">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.9rem;">
+              <div id="color-swatch-box" style="width: 44px; height: 44px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3); background: #34d399;"></div>
+              <strong id="color-name-label" style="font-size: 1.2rem; font-family: var(--font-mono);">530 nm — Green</strong>
+            </div>
+          </div>
+
+          <div class="control-group" style="margin-bottom: 1rem;">
+            <label for="color-nm-slider">Tune Wavelength:</label>
+            <input id="color-nm-slider" type="range" min="380" max="750" step="1" value="530" style="flex: 1;" />
+          </div>
+
+          <!-- Color reference bar -->
+          <div style="height: 18px; border-radius: 6px; background: linear-gradient(to right, #818cf8, #38bdf8, #34d399, #facc15, #fb923c, #ef4444); margin-bottom: 1rem; border: 1px solid var(--border);"></div>
+
+          <div id="color-readout" class="sim-readout" style="border-radius: 8px;"></div>
+        </div>
+
+        <div class="cards-2col" style="margin-top: 1rem;">
+          <div class="info-card">
+            <h4>🔴 Red Light (~620 – 750 nm)</h4>
+            <p>Lowest energy visible light (~1.8 eV). Scatters the least in air, which is why brake lights and stop signs are red!</p>
+          </div>
+          <div class="info-card">
+            <h4>🟣 Violet Light (~380 – 450 nm)</h4>
+            <p>Highest energy visible light (~3.1 eV). Scatters easily in the atmosphere and sits right on the edge of invisible Ultraviolet.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: INVISIBLE LIGHT -->
+      <section id="invisible-light">
+        <h2>3. The 6 Types of Invisible Light</h2>
+        <p>Light that human eyes cannot see, arranged from longest wavelength to shortest:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Type of Light</th>
+                <th>Wavelength Size</th>
+                <th>Why It Is Invisible</th>
+                <th>Everyday Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Radio Waves</strong></td>
+                <td>Kilometers to meters (building size)</td>
+                <td>Energy too low to activate eye cells</td>
+                <td><strong>Wi-Fi, cellphones, FM radio</strong></td>
+              </tr>
+              <tr>
+                <td><strong>2. Microwaves</strong></td>
+                <td>Centimeters to millimeters</td>
+                <td>Spins water molecules to heat food</td>
+                <td><strong>Microwave ovens, radar, Bluetooth</strong></td>
+              </tr>
+              <tr>
+                <td><strong>3. Infrared (Heat)</strong></td>
+                <td>Millimeters to 750 nm</td>
+                <td>Emitted by warm objects and bodies</td>
+                <td><strong>TV remotes, thermal night vision cameras</strong></td>
+              </tr>
+              <tr>
+                <td><strong>4. Ultraviolet (UV)</strong></td>
+                <td>380 nm down to 10 nm</td>
+                <td>Blocked by the eye's cornea/lens</td>
+                <td><strong>Sunlight tanning/sunburn, blacklights</strong></td>
+              </tr>
+              <tr>
+                <td><strong>5. X-Rays</strong></td>
+                <td>10 nm down to 0.01 nm (atom size)</td>
+                <td>High energy; passes through soft tissue</td>
+                <td><strong>Medical bone scans, airport security</strong></td>
+              </tr>
+              <tr>
+                <td><strong>6. Gamma Rays</strong></td>
+                <td>Under 0.01 nm (nucleus size)</td>
+                <td>Extremely high energy; deeply penetrating</td>
+                <td><strong>Nuclear power, cancer radiotherapy, space supernovae</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: WHY HUMANS CAN'T SEE IT -->
+      <section id="why-invisible">
+        <h2>4. Why Can't Humans See Invisible Light?</h2>
+        <div class="callout violet">
+          <div class="callout-title">Two Physical Reasons:</div>
+          • <strong>Too Weak (Radio, Microwave, Infrared):</strong> Each photon carries less than 1.8 eV of energy. That is not enough energy to trigger the <em>11-cis-retinal</em> molecular switch in your eye's photoreceptors.<br /><br />
+          • <strong>Too Strong (UV, X-Ray, Gamma):</strong> High-energy photons would destroy fragile retina cells! To protect your vision, your eye's <strong>cornea and crystalline lens absorb UV rays</strong> before they can reach the retina (though bees and butterflies <em>can</em> see UV!).
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Physics Learning Notes · <a href="../index.html">Back to All Concepts</a></span>
+      <span>Topic 04: Colors &amp; the Light Spectrum · Built for GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/spectrum-sim.js"></script>
+</body>
+</html>
