@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics Learning Notes — Interactive Concept Hub</title>
+  <meta name="description" content="A growing collection of interactive physics concepts, intuition-first explanations, and simulations hosted on GitHub Pages." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge">φ</span>
+        <span>Physics Learning Notes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">All Concepts</a>
+        <a href="topics/photons.html">01 · Photons</a>
+        <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-eyebrow">Interactive Physics Knowledge Base</div>
+      <h1>Understanding How the Universe Works, One Concept at a Time</h1>
+      <p class="lead">
+        A living collection of first-principles explanations, visual diagrams, and real-time browser simulations
+        covering the physics concepts I am learning—starting with the birth, room journey, and final fate of photons.
+      </p>
+      <div class="hero-meta">
+        <span>📘 1 Interactive Topic Live</span>
+        <span>🧪 Canvas Simulations</span>
+        <span>🌗 Dark &amp; Light Mode</span>
+      </div>
+    </section>
+
+    <section aria-label="Physics Topics">
+      <div class="hub-toolbar">
+        <div class="search-box">
+          <input id="topic-search" type="search" placeholder="Search concepts (e.g., photon, room, heat, LED)…" aria-label="Search physics concepts" />
+        </div>
+        <div class="filter-pills">
+          <button class="pill active" type="button" data-filter="all">All</button>
+          <button class="pill" type="button" data-filter="quantum-optics">Quantum &amp; Optics</button>
+          <button class="pill" type="button" data-filter="thermo">Thermodynamics</button>
+          <button class="pill" type="button" data-filter="relativity">Relativity</button>
+          <button class="pill" type="button" data-filter="mechanics">Mechanics</button>
+        </div>
+      </div>
+
+      <div class="topic-grid">
+        <!-- Topic 01: Live -->
+        <a class="topic-card" href="topics/photons.html" data-category="quantum-optics">
+          <div class="card-top">
+            <span class="card-num">TOPIC 01</span>
+            <span class="badge badge-live">Live · Interactive</span>
+          </div>
+          <h3>All About Photons: Creation, Room Journey &amp; Final Fate</h3>
+          <p>
+            What a photon is in QED, every mechanism that generates light (atoms, LEDs, blackbody heat), what happens
+            inside a room nanosecond-by-nanosecond, and where every photon ultimately goes.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Quantum Optics</span>
+            <span class="tag">Room Simulator</span>
+            <span class="tag">EM Spectrum</span>
+            <span class="tag">Phonons &amp; IR</span>
+          </div>
+        </a>
+
+        <!-- Upcoming Placeholders for Scalability -->
+        <div class="topic-card upcoming" data-category="quantum-optics">
+          <div class="card-top">
+            <span class="card-num">TOPIC 02</span>
+            <span class="badge badge-planned">Upcoming</span>
+          </div>
+          <h3>Electrons, Energy Bands &amp; Semiconductors</h3>
+          <p>
+            How electrons behave inside atoms vs. crystal lattices, why metals conduct, why glass is transparent,
+            and how p-n junctions turn electricity into photons.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Solid State</span>
+            <span class="tag">Bandgaps</span>
+          </div>
+        </div>
+
+        <div class="topic-card upcoming" data-category="thermo">
+          <div class="card-top">
+            <span class="card-num">TOPIC 03</span>
+            <span class="badge badge-planned">Upcoming</span>
+          </div>
+          <h3>Heat, Phonons &amp; Entropy</h3>
+          <p>
+            From microscopic atomic vibrations to temperature, thermal equilibrium, blackbody radiation, and why
+            energy spreads out irreversibly.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Thermodynamics</span>
+            <span class="tag">Statistical Mechanics</span>
+          </div>
+        </div>
+
+        <div class="topic-card upcoming" data-category="relativity">
+          <div class="card-top">
+            <span class="card-num">TOPIC 04</span>
+            <span class="badge badge-planned">Upcoming</span>
+          </div>
+          <h3>Special Relativity &amp; Spacetime</h3>
+          <p>
+            Why the speed of light <i>c</i> is invariant for all observers, time dilation, length contraction,
+            <i>E = mc²</i>, and why photons experience zero proper time.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Relativity</span>
+            <span class="tag">Null Geodesics</span>
+          </div>
+        </div>
+
+        <div class="topic-card upcoming" data-category="mechanics">
+          <div class="card-top">
+            <span class="card-num">TOPIC 05</span>
+            <span class="badge badge-planned">Upcoming</span>
+          </div>
+          <h3>Waves, Interference &amp; Double-Slit Intuition</h3>
+          <p>
+            Superposition, phase, diffraction, and how single photons build up interference patterns one click at a time.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Wave Optics</span>
+            <span class="tag">Quantum Amplitude</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 3.5rem;">
+      <h2 style="font-size: 1.35rem; color: var(--text-bright); margin-bottom: 0.9rem;">Fundamental Constants Cheat Sheet</h2>
+      <div class="stat-strip">
+        <div class="stat-box">
+          <div class="stat-label">Speed of Light (c)</div>
+          <div class="stat-value">299,792,458 m/s</div>
+          <div class="stat-sub">Exact SI definition</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Planck Constant (h)</div>
+          <div class="stat-value">6.626 × 10⁻³⁴ J·s</div>
+          <div class="stat-sub">4.136 × 10⁻¹⁵ eV·s</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Electron Volt (1 eV)</div>
+          <div class="stat-value">1.602 × 10⁻¹⁹ J</div>
+          <div class="stat-sub">Atomic energy scale</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Boltzmann Constant (k_B)</div>
+          <div class="stat-value">1.381 × 10⁻²³ J/K</div>
+          <div class="stat-sub">Room T ≈ 295 K → ~25 meV</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Physics Learning Notes · Static HTML/CSS/JS</span>
+      <span>Ready for GitHub Pages · <a href="topics/photons.html">Start with Topic 01: Photons →</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

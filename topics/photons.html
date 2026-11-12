@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All About Photons — Creation, Room Journey &amp; Final Fate | Physics Notes</title>
+  <meta name="description" content="A complete interactive guide to photons: what they are, how they are generated, what happens to light inside a room, and where every photon ultimately goes." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge">φ</span>
+        <span>Physics Learning Notes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">All Concepts</a>
+        <a href="photons.html" class="active">01 · Photons</a>
+        <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-eyebrow">Topic 01 · Electromagnetism &amp; Quantum Optics</div>
+      <h1>All About Photons: From Creation to Final Fate</h1>
+      <p class="lead">
+        What a photon actually is, every physical mechanism that creates one, what happens inside a room
+        the moment you flip on a light switch, and where every single photon goes until the very end.
+      </p>
+      <div class="hero-meta">
+        <span>⚡ Speed in vacuum: 299,792,458 m/s</span>
+        <span>🔬 Interactive Simulations Included</span>
+        <span>🏠 Room Lifecycle: ~13 ns per bounce</span>
+      </div>
+    </section>
+
+    <div class="topic-layout">
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="toc" aria-label="Table of Contents">
+        <div class="toc-title">On This Page</div>
+        <ul>
+          <li><a href="#what-is-a-photon">1. What Is a Photon?</a></li>
+          <li><a href="#spectrum-explorer">2. Properties &amp; EM Spectrum</a></li>
+          <li><a href="#how-generated">3. How Photons Are Generated</a></li>
+          <li><a href="#generation-lab">4. Interactive Generation Lab</a></li>
+          <li><a href="#inside-a-room">5. Light Inside a Room</a></li>
+          <li><a href="#room-simulator">6. Interactive Room Simulator</a></li>
+          <li><a href="#final-fate">7. Until Where It Goes (Final Fate)</a></li>
+          <li><a href="#deep-dives">8. Deep Dives &amp; Key Questions</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Article Content -->
+      <article class="article-content">
+        <!-- SECTION 1 -->
+        <section id="what-is-a-photon">
+          <h2>1. What Is a Photon?</h2>
+          <p>
+            In modern physics (<strong>Quantum Electrodynamics, or QED</strong>), space is permeated everywhere by a
+            fundamental quantum field called the <strong>electromagnetic field</strong>. A <strong>photon</strong> is the
+            smallest possible discrete packet—or <em>quantum excitation</em>—of that field.
+          </p>
+          <p>
+            You cannot split a single photon of frequency <i>ν</i> into two half-photons of the same frequency. Instead,
+            light exhibits <strong>wave-particle duality</strong>:
+          </p>
+          <ul>
+            <li><strong>When traveling through space:</strong> it propagates as a quantum probability amplitude governed by Maxwell's wave equations—diffracting around edges, interfering with itself, and carrying oscillating electric and magnetic fields.</li>
+            <li><strong>When created or absorbed:</strong> it delivers or takes energy in an all-or-nothing discrete packet at a localized spot (like a single atom, an LED junction, or a rod cell in your eye).</li>
+          </ul>
+
+          <div class="stat-strip">
+            <div class="stat-box">
+              <div class="stat-label">Speed (Vacuum)</div>
+              <div class="stat-value">c = 2.998 × 10⁸ m/s</div>
+              <div class="stat-sub">Slows to c/n inside air, glass, or water</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Rest Mass (m₀)</div>
+              <div class="stat-value">0 kg</div>
+              <div class="stat-sub">Pure relativistic energy &amp; momentum</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Quantum Spin</div>
+              <div class="stat-value">1 ħ (Boson)</div>
+              <div class="stat-sub">2 polarization states (helicity ±1)</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Electric Charge</div>
+              <div class="stat-value">0</div>
+              <div class="stat-sub">Photons pass right through each other</div>
+            </div>
+          </div>
+
+          <div class="math-card">
+            <div class="math-expr">
+              <i>E</i> = <i>hν</i> =
+              <span class="frac"><span><i>hc</i></span><span><i>λ</i></span></span>
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              <i>p</i> =
+              <span class="frac"><span><i>E</i></span><span><i>c</i></span></span>
+              =
+              <span class="frac"><span><i>h</i></span><span><i>λ</i></span></span>
+            </div>
+            <div class="math-note">
+              Planck constant <i>h</i> ≈ 6.626 × 10⁻³⁴ J·s &nbsp;·&nbsp; Shortcut: <i>E</i> (eV) ≈ 1240 / <i>λ</i> (nm)
+            </div>
+          </div>
+
+          <div class="callout">
+            <div class="callout-title">Key Intuition: Energy Determines Color, Intensity Determines Count</div>
+            A dim blue laser and a bright red lamp differ in two independent ways. Each <em>individual</em> blue photon
+            (450 nm, ~2.76 eV) carries more energy than a red photon (650 nm, ~1.91 eV). Brightness (intensity) simply
+            measures <strong>how many photons arrive per second</strong>.
+          </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section id="spectrum-explorer">
+          <h2>2. Properties Across the Electromagnetic Spectrum</h2>
+          <p>
+            Radio waves, Wi-Fi, room heat, visible colors, X-rays, and gamma rays are all the <strong>exact same particle—the photon</strong>.
+            The only difference between a Wi-Fi photon and a visible green photon is its wavelength <i>λ</i> (and therefore its energy <i>E = hc/λ</i>).
+          </p>
+
+          <div class="sim-panel">
+            <div class="sim-header">
+              <div class="sim-title"><span class="sim-dot"></span> Interactive EM Spectrum &amp; Photon Calculator</div>
+              <div id="em-swatch" style="padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700; color: #fff; border: 1px solid rgba(255,255,255,0.2);">
+                Visible
+              </div>
+            </div>
+            <div class="sim-controls" style="flex-direction: column; align-items: stretch;">
+              <div class="control-group" style="justify-content: space-between;">
+                <label for="em-slider">Wavelength (log₁₀ scale from 0.1 pm Gamma to 1 km Radio):</label>
+                <input id="em-slider" type="range" min="-13" max="3" step="0.02" value="-6.27" style="flex: 1; max-width: 420px;" />
+              </div>
+              <div class="sim-tabs">
+                <button class="sim-btn" type="button" data-em-exp="1">Radio (10 m)</button>
+                <button class="sim-btn" type="button" data-em-exp="-0.9">Wi-Fi (12.5 cm)</button>
+                <button class="sim-btn" type="button" data-em-exp="-5">Room IR (10 µm)</button>
+                <button class="sim-btn" type="button" data-em-exp="-6.18">Red (650 nm)</button>
+                <button class="sim-btn" type="button" data-em-exp="-6.27">Green (532 nm)</button>
+                <button class="sim-btn" type="button" data-em-exp="-6.35">Blue (450 nm)</button>
+                <button class="sim-btn" type="button" data-em-exp="-6.6">UV (250 nm)</button>
+                <button class="sim-btn" type="button" data-em-exp="-10">X-Ray (0.1 nm)</button>
+                <button class="sim-btn" type="button" data-em-exp="-12.5">Gamma (0.3 pm)</button>
+              </div>
+            </div>
+            <div id="em-readout" class="sim-readout" style="flex-direction: column; gap: 0.35rem; font-family: var(--font-sans); font-size: 0.9rem;"></div>
+          </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section id="how-generated">
+          <h2>3. How Photons Are Generated</h2>
+          <p>
+            Photons are <strong>not stored inside a bulb or battery</strong> waiting to leak out. They are created fresh at
+            the exact instant an electric charge changes its energy state or accelerates. Whenever charged particles (usually
+            electrons) lose energy to the electromagnetic field, a photon is born.
+          </p>
+
+          <div class="cards-2col">
+            <div class="info-card">
+              <h4>⚛️ 1. Atomic &amp; Molecular Transitions</h4>
+              <p>
+                An electron in an atom or molecule drops from a higher energy orbital <i>E</i>₂ to a lower orbital <i>E</i>₁.
+                Conservation of energy creates a single photon with exact energy <i>hν = E</i>₂ − <i>E</i>₁.
+                <br /><strong>Examples:</strong> Neon signs, fluorescent tube mercury vapor, sodium streetlamps, lasers (stimulated emission).
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h4>💡 2. LEDs (Electroluminescence)</h4>
+              <p>
+                Inside a semiconductor p-n junction, voltage pushes electrons in the conduction band to recombine with
+                missing-electron "holes" in the valence band, releasing a photon equal to the bandgap <i>E<sub>g</sub></i>.
+                White LEDs use a blue LED (~450 nm) coated with yellow-green phosphor!
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h4>🔥 3. Thermal / Blackbody Radiation</h4>
+              <p>
+                Any object above absolute zero (0 K) has atoms and electrons violently jiggling and colliding. Those tiny
+                random accelerations radiate a continuous spectrum of photons governed by Planck's law.
+                <br /><strong>Examples:</strong> Incandescent filament (~2700 K), the Sun (~5800 K), and your own room walls (~295 K emitting ~10 µm infrared!).
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h4>📡 4. Accelerating Free Charges</h4>
+              <p>
+                When free electrons oscillate or decelerate rapidly, they shake the electromagnetic field and shed photons:
+                <br />• <strong>Antennas:</strong> oscillating AC currents → radio/Wi-Fi photons.
+                <br />• <strong>Bremsstrahlung:</strong> fast electrons braking near nuclei → X-rays.
+                <br />• <strong>Synchrotron / Cherenkov:</strong> bent relativistic charges or charges faster than <i>c/n</i> in water.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h4>💥 5. Particle Annihilation &amp; Nuclear Decay</h4>
+              <p>
+                When an electron meets its antimatter twin (a positron), their mass converts completely into two gamma-ray
+                photons of 511 keV each. Excited atomic nuclei also drop energy levels by emitting MeV gamma photons.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h4>✨ 6. Chemiluminescence &amp; Bioluminescence</h4>
+              <p>
+                Chemical reactions leave product molecules in an electronically excited state, which relaxes by emitting a
+                visible photon without heat ("cold light").
+                <br /><strong>Examples:</strong> Fireflies, glowsticks, deep-sea jellyfish.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 4: GENERATION LAB -->
+        <section id="generation-lab">
+          <h2>4. Interactive Photon Generation Lab</h2>
+          <p>
+            Switch between the three most important photon generators in everyday life—quantum atomic jumps, modern LEDs,
+            and thermal blackbody emitters—and watch how photons are born.
+          </p>
+
+          <div class="sim-panel">
+            <div class="sim-header">
+              <div class="sim-title"><span class="sim-dot"></span> Photon Creation Mechanism Lab</div>
+              <div class="sim-tabs">
+                <button class="sim-btn active" type="button" data-gen-mode="atom">Atomic Jump</button>
+                <button class="sim-btn" type="button" data-gen-mode="led">LED Bandgap</button>
+                <button class="sim-btn" type="button" data-gen-mode="blackbody">Thermal Blackbody</button>
+              </div>
+            </div>
+            <div class="sim-canvas-wrap">
+              <canvas id="gen-canvas" width="760" height="350"></canvas>
+            </div>
+            <div class="sim-controls">
+              <button id="gen-action-btn" class="sim-btn primary" type="button">⚡ Excite Electron (n=1 → n=3)</button>
+              <div id="gen-slider-wrap" class="control-group" style="display: none;">
+                <label id="gen-slider-label" for="gen-slider">Parameter:</label>
+                <input id="gen-slider" type="range" min="1.4" max="3.1" step="0.02" value="2.33" />
+                <strong id="gen-slider-val" style="font-family: var(--font-mono); color: var(--accent);"></strong>
+              </div>
+            </div>
+            <div id="gen-readout" class="sim-readout"></div>
+          </div>
+        </section>
+
+        <!-- SECTION 5: INSIDE A ROOM -->
+        <section id="inside-a-room">
+          <h2>5. What Happens When Photons Enter a Room</h2>
+          <p>
+            Imagine flipping on a <strong>10-watt LED bulb</strong> in an ordinary 4 m × 4 m × 2.5 m bedroom. Even though
+            photons move at nearly 300,000 kilometers per second, every photon follows a precise physical timeline inside
+            the room:
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-step">
+              <div class="timeline-time">t = 0 ns · Emission</div>
+              <h4>~10¹⁹ Visible Photons Created Every Second</h4>
+              <p>
+                An average visible photon has energy ~2.2 eV (≈ 3.5 × 10⁻¹⁹ J). A 10 W LED producing ~3 W of optical light
+                fires roughly <strong>8.5 × 10¹⁸ visible photons per second</strong> outward in all directions.
+                At any frozen instant in time, roughly <strong>300–500 billion visible photons</strong> are mid-flight inside the room.
+              </p>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-time">t = 0 to ~13 ns · Flight Through Air</div>
+              <h4>Crossing the Room in 13 Nanoseconds</h4>
+              <p>
+                Air has refractive index <i>n</i> ≈ 1.00029, so photons travel at 99.97% of vacuum speed <i>c</i>—crossing a 4-meter
+                room in just <strong>13.3 nanoseconds</strong>. Over 4 meters of clean air, less than 0.01% of visible photons
+                scatter off N₂/O₂ molecules (Rayleigh scattering, the effect that makes the sky blue over kilometers).
+                Photons also <strong>never bounce off each other</strong>; light beams pass cleanly through one another.
+              </p>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-time">t ≈ 13 ns · First Surface Impact</div>
+              <h4>Four Possible Fates at Every Boundary</h4>
+              <p>
+                When a photon reaches a wall, mirror, table, window, or your skin, the local electrons respond to its
+                electromagnetic wave in one of four ways:
+              </p>
+              <ul>
+                <li><strong>Specular Reflection (Mirror / Polished Metal):</strong> Free conduction electrons oscillate smoothly in phase with the incoming field and re-radiate a coherent wave at the exact mirror angle (<i>θ<sub>i</sub> = θ<sub>r</sub></i>). Roughly 90–99% survive each bounce.</li>
+                <li><strong>Diffuse Reflection (Matte Painted Walls):</strong> Photons penetrate micrometers into the paint binder, scatter randomly off titanium dioxide (TiO₂) or pigment grains, and re-emerge in all directions—illuminating the room evenly.</li>
+                <li><strong>Selective Absorption (Color!):</strong> A red shirt or red wall appears red because its dye molecules have electronic transitions matching blue and green photons (2.3–3.0 eV). Those photons get absorbed, while red photons (~1.9 eV) cannot excite the dye and scatter back out to your eyes!</li>
+                <li><strong>Transmission &amp; Refraction (Glass Window):</strong> Clear glass has an electronic bandgap larger than visible photon energies, so visible photons cannot excite its electrons. Instead, they couple briefly to glass polarization and emerge at <i>c/n</i> (with ~4% Fresnel reflection per glass surface).</li>
+              </ul>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-time">t ≈ 50–500 ns · Multiple Bounces &amp; Exponential Decay</div>
+              <h4>How Many Times Does a Photon Bounce?</h4>
+              <p>
+                If walls have average reflectance (albedo) <i>R</i>, the probability of surviving <i>k</i> bounces is <i>R<sup>k</sup></i>.
+                In a white-painted room (<i>R</i> ≈ 0.75), the average photon bounces only <strong>1/(1 − <i>R</i>) ≈ 4 times</strong>
+                (~53 ns lifetime). Even the luckiest 1-in-a-million photon is gone by ~48 bounces (<strong>~640 ns</strong>).
+                In a dark charcoal room (<i>R</i> ≈ 0.15), most photons die on their very first impact (~13 ns)!
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 6: ROOM SIMULATOR -->
+        <section id="room-simulator">
+          <h2>6. Interactive Room Photon Simulator</h2>
+          <p>
+            Time in <strong>Slow-Mo</strong> is slowed down roughly <strong>100 million times</strong> so you can watch
+            individual photon wavepackets bounce and decay over a few seconds instead of ~500 nanoseconds. Switch to
+            <strong>Real-Time</strong> and turn the <strong>Light OFF</strong> to see why visible light vanishes
+            instantaneously—while <strong>~10 µm thermal infrared photons</strong> remain in the dark room!
+          </p>
+
+          <div class="sim-panel">
+            <div class="sim-header">
+              <div class="sim-title"><span class="sim-dot"></span> Room Photon Lifecycle Simulator</div>
+              <div class="sim-tabs">
+                <button id="room-switch-btn" class="sim-btn amber-on" type="button">💡 Light: ON (Click to Turn OFF)</button>
+                <button id="room-burst-btn" class="sim-btn" type="button">⚡ Emit Single Burst</button>
+              </div>
+            </div>
+            <div class="sim-canvas-wrap">
+              <canvas id="room-canvas" width="820" height="400"></canvas>
+            </div>
+            <div class="sim-controls">
+              <div class="control-group">
+                <label for="room-speed-select">Time Scale:</label>
+                <select id="room-speed-select">
+                  <option value="slow">Slow-Mo (~10⁸× slower — watch ~500 ns decay)</option>
+                  <option value="fast">Fast Slow-Mo (watch quick extinction)</option>
+                  <option value="realtime">Real-Time (instant ~500 ns darkness!)</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label for="room-wall-select">Wall Surface:</label>
+                <select id="room-wall-select">
+                  <option value="white">White Matte Paint (R ≈ 0.78)</option>
+                  <option value="red">Red Paint (Absorbs Blue/Green, Reflects Red)</option>
+                  <option value="dark">Dark Charcoal Wall (R ≈ 0.18)</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label>
+                  <input id="room-ir-toggle" type="checkbox" checked />
+                  Show Ambient Infrared (10 µm Thermal IR)
+                </label>
+              </div>
+            </div>
+            <div id="room-readout" class="sim-readout"></div>
+          </div>
+        </section>
+
+        <!-- SECTION 7: UNTIL WHERE IT GOES -->
+        <section id="final-fate">
+          <h2>7. Until Where It Goes: The Ultimate Fate of Every Photon</h2>
+          <p>
+            Energy cannot be destroyed (First Law of Thermodynamics). So once a visible photon finishes bouncing around
+            your room, where did it—and its energy—actually go? Every single photon meets one of four endings:
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Final Fate</th>
+                  <th>Share of Room Photons</th>
+                  <th>What Physically Happens</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Absorbed → Phonons (Heat) → Thermal Infrared</strong></td>
+                  <td><strong>~95% – 99%+</strong> (closed room)</td>
+                  <td>
+                    An electron absorbs the visible photon (~2 eV), then within picoseconds dumps that energy into
+                    atomic lattice vibrations called <strong>phonons</strong> (heat). The slightly warmed walls and
+                    furniture continuously radiate that energy back out as <strong>~10 µm infrared photons</strong>.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2. Escapes Through Window → Atmosphere / Deep Space</strong></td>
+                  <td><strong>~1% – 5%</strong> (near window)</td>
+                  <td>
+                    Passes through window glass (which transmits visible light while blocking ~10 µm room IR). Outside,
+                    photons either get absorbed by trees/ground/clouds, or—if aimed upward—pass through the atmosphere
+                    and travel across space at <i>c</i> indefinitely, redshifting as the universe expands.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>3. Photochemistry &amp; Vision (Retina / Plants)</strong></td>
+                  <td><strong>&lt; 0.0001%</strong></td>
+                  <td>
+                    A tiny fraction enters your pupil and hits a rod or cone cell, snapping a retinal molecule
+                    (<em>11-cis</em> → <em>all-trans</em>) to trigger an electrical nerve impulse to your brain.
+                    On a houseplant leaf, chlorophyll captures red/blue photons to split water and build sugars.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>4. Delayed Re-emission (Fluorescence / Phosphorescence)</strong></td>
+                  <td><strong>Trace</strong> (if special materials present)</td>
+                  <td>
+                    Optical brighteners in white paper/clothes (fluorescence, nanoseconds) or glow-in-the-dark stickers
+                    (phosphorescence, minutes to hours) absorb high-energy blue/UV photons and later emit lower-energy visible photons.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout amber">
+            <div class="callout-title">Plot Twist: A "Dark" Room Is Still Full of Photons!</div>
+            When you turn off the light switch, visible photons vanish in <strong>under 1 microsecond (~500 ns)</strong>—why
+            darkness looks instantaneous to human eyes (which average light over ~20–50 milliseconds).
+            <br /><br />
+            Yet the room is <strong>not empty of photons</strong>! Because the walls, ceiling, bed, and your own body sit
+            around <strong>295 K (22 °C)</strong>, Wien's Law says they peak in thermal blackbody emission at
+            <i>λ</i><sub>max</sub> ≈ 2898 / 295 ≈ <strong>9.8 µm (mid-infrared)</strong>. Every square meter of wall
+            radiates ~430 watts of infrared photons continuously—filling the dark room with trillions of invisible IR
+            photons at all times. Thermal cameras see them clearly!
+          </div>
+        </section>
+
+        <!-- SECTION 8: DEEP DIVES -->
+        <section id="deep-dives">
+          <h2>8. Deep Dives &amp; Common Questions</h2>
+
+          <details class="deep-dive">
+            <summary>When light reflects off a mirror, is it the "same" photon or a brand-new one?</summary>
+            <div class="deep-body">
+              In Quantum Electrodynamics (QED), photons are indistinguishable bosons, and reflection is best understood
+              as <strong>elastic coherent scattering</strong> by the collective sea of conduction electrons in the metal
+              coating. The incoming EM wave drives all those electrons to oscillate together; those oscillating electrons
+              radiate an outgoing field whose amplitudes interfere constructively <em>only</em> along the mirror reflection
+              angle (<i>θ<sub>i</sub> = θ<sub>r</sub></i>) and cancel everywhere else. Because no net energy is left behind
+              in the metal (for an ideal mirror), the outgoing photon has the exact same frequency and polarization relationship.
+            </div>
+          </details>
+
+          <details class="deep-dive">
+            <summary>If a photon has zero rest mass, how does it have momentum (p = h/λ)?</summary>
+            <div class="deep-body">
+              In Einstein's full relativistic energy-momentum relation, <i>E</i>² = (<i>pc</i>)² + (<i>m</i>₀<i>c</i>²)².
+              Newton's <i>p = mv</i> only works for slow, massive objects. For a massless particle (<i>m</i>₀ = 0),
+              the equation simplifies cleanly to <i>E = pc</i>, so <i>p = E/c = hν/c = h/λ</i>.
+              This tiny momentum is physically real—it exerts <strong>radiation pressure</strong> on walls (a 10 W bulb
+              pushes gently on a room's walls with ~3.3 × 10⁻⁸ newtons!) and propels spacecraft solar sails in space.
+            </div>
+          </details>
+
+          <details class="deep-dive">
+            <summary>Why does window glass let visible light out, yet block UV and room-temperature Infrared?</summary>
+            <div class="deep-body">
+              Matter only absorbs photons whose energy matches an allowed transition in that material:
+              <ul>
+                <li><strong>Visible photons (1.8–3.1 eV):</strong> Too low in energy to jump silicon dioxide's ~9 eV electronic bandgap, and too high in energy to resonate with slow atomic vibrations—so visible light glides straight through!</li>
+                <li><strong>Ultraviolet photons (&gt; 4 eV):</strong> High enough to excite impurities and electronic states in soda-lime glass, so UV-B is largely absorbed.</li>
+                <li><strong>Thermal Infrared (~10 µm, ~0.12 eV):</strong> Matches the vibrational stretching modes of Si–O chemical bonds, so ordinary window glass absorbs room heat strongly (which is also how greenhouses trap thermal IR!).</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="deep-dive">
+            <summary>Do photons age or experience time while traveling across the universe?</summary>
+            <div class="deep-body">
+              In special relativity, the proper time interval along a path is <i>dτ</i>² = <i>dt</i>² − <i>dx</i>²/<i>c</i>².
+              Because a photon moves in vacuum at <i>dx/dt = c</i>, its proper time is strictly <strong><i>dτ = 0</i></strong>
+              (a "null geodesic"). Strictly speaking, no valid inertial reference frame exists moving at <i>c</i>, so we cannot
+              assign a clock to a photon—but in the limit <i>v → c</i>, time dilation approaches infinity: a photon traveling
+              13 billion light-years from an early galaxy experiences zero proper time between emission and absorption.
+            </div>
+          </details>
+
+          <details class="deep-dive">
+            <summary>Can two photons ever collide with each other inside a room?</summary>
+            <div class="deep-body">
+              In classical Maxwell electromagnetism, the equations are completely linear, so two light beams pass right
+              through each other without any disturbance (superposition). In QED, two photons <em>can</em> scatter off each
+              other indirectly by briefly fluctuating into a virtual electron-positron loop ("light-by-light scattering"),
+              but for visible light the cross-section is roughly <strong>10⁻⁶⁵ cm²</strong>—meaning two flashlight beams
+              crossing in your room will effectively <em>never</em> collide in the lifetime of the universe.
+            </div>
+          </details>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Physics Learning Notes · <a href="../index.html">Back to All Concepts</a></span>
+      <span>Topic 01: Photons &amp; Light · Built for GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/photons-sim.js"></script>
+</body>
+</html>
