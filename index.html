@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Physics Learning Notes — Interactive Concept Hub</title>
-  <meta name="description" content="A growing collection of interactive physics concepts, intuition-first explanations, and simulations hosted on GitHub Pages." />
+  <meta name="description" content="A modern, interactive collection of 100 physics concepts organized across 6 core pillars, complete with first-principles visual guides and browser simulations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -15,11 +18,10 @@
         <span>Physics Learning Notes</span>
       </a>
       <nav class="nav-links">
-        <a href="index.html" class="active">All Concepts</a>
-        <a href="topics/photons.html">01 · Photons</a>
-        <a href="topics/human-eye.html">02 · Human Eye</a>
-        <a href="topics/reflection-scattering.html">03 · Reflection &amp; Scattering</a>
-        <a href="topics/light-spectrum.html">04 · Colors &amp; Spectrum</a>
+        <a href="index.html" class="active">All Topics</a>
+        <a href="#domain-optics-waves">Light &amp; Optics</a>
+        <a href="#domain-quantum-atomic">Quantum</a>
+        <a href="#domain-thermodynamics">Thermo</a>
         <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
       </nav>
     </div>
@@ -27,144 +29,120 @@
 
   <main class="container">
     <section class="hero">
-      <div class="hero-eyebrow">Interactive Physics Knowledge Base</div>
-      <h1>Understanding How the Universe Works, One Concept at a Time</h1>
+      <div class="hero-eyebrow">Interactive Physics Learning Garden</div>
+      <h1>Understanding the Universe, One Concept at a Time</h1>
       <p class="lead">
-        A living collection of first-principles explanations, visual diagrams, and real-time browser simulations
-        covering the physics concepts I am learning—from photons and vision to reflection, scattering, and the full electromagnetic spectrum.
+        A structured knowledge base of first-principles explanations, visual diagrams, and real-time browser simulations
+        grouped into 6 fundamental physics pillars designed to scale to 100+ concepts.
       </p>
-      <div class="hero-meta">
-        <span>📘 4 Interactive Topics Live</span>
-        <span>🧪 Canvas Simulations</span>
-        <span>🌗 Dark &amp; Light Mode</span>
+
+      <!-- Learning Progress Tracker Strip -->
+      <div class="progress-strip">
+        <div class="progress-stats">
+          <div class="stat-item">
+            <span id="stats-live-count" class="stat-item-num">5</span>
+            <span class="stat-item-label">Live Interactive</span>
+          </div>
+          <div class="stat-item">
+            <span id="stats-total-count" class="stat-item-num">26</span>
+            <span class="stat-item-label">Concept Roadmap</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item-num">6</span>
+            <span class="stat-item-label">Physics Pillars</span>
+          </div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-label">
+            <span>Overall Roadmap Progress</span>
+            <span id="stats-progress-pct">19%</span>
+          </div>
+          <div class="progress-bar-track">
+            <div id="stats-progress-fill" class="progress-bar-fill" style="width: 19%;"></div>
+          </div>
+        </div>
       </div>
+
+      <!-- Search Toolbar with Keyboard Shortcut -->
+      <div class="hub-toolbar" style="margin-bottom: 1.25rem;">
+        <div class="search-box" style="max-width: 460px;">
+          <input id="topic-search" type="search" placeholder="Search 100 topics (e.g. photon, eye, reflection, wave, entropy)…" aria-label="Search physics topics" />
+          <span class="kbd-badge" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none;">/</span>
+        </div>
+        <div id="search-results-count" style="font-size: 0.88rem; color: var(--accent); font-family: var(--font-mono);"></div>
+      </div>
+
+      <!-- Domain Navigation Tabs -->
+      <div id="domain-nav" class="domain-nav" aria-label="Physics Domains Filter"></div>
     </section>
 
-    <section aria-label="Physics Topics">
-      <div class="hub-toolbar">
-        <div class="search-box">
-          <input id="topic-search" type="search" placeholder="Search concepts (e.g., photon, eye, cornea, retina, heat)…" aria-label="Search physics concepts" />
+    <!-- Grouped Domain Shelves Container -->
+    <div id="domains-container">
+      <!-- Fallback static content for non-JS / search engine crawling -->
+      <section class="domain-module" id="domain-optics-waves">
+        <div class="domain-header">
+          <div class="domain-title-wrap">
+            <span class="domain-icon">🔮</span>
+            <div>
+              <h2>Light, Optics &amp; Waves</h2>
+              <p class="domain-desc">The nature of photons, geometric and wave optics, vision, reflection, and polarization.</p>
+            </div>
+          </div>
+          <div class="domain-status-pill"><strong>5 Live</strong> · 8 Concepts</div>
         </div>
-        <div class="filter-pills">
-          <button class="pill active" type="button" data-filter="all">All</button>
-          <button class="pill" type="button" data-filter="quantum-optics">Quantum &amp; Optics</button>
-          <button class="pill" type="button" data-filter="thermo">Thermodynamics</button>
-          <button class="pill" type="button" data-filter="relativity">Relativity</button>
-          <button class="pill" type="button" data-filter="mechanics">Mechanics</button>
+        <div class="topic-grid">
+          <a class="topic-card live-card" href="topics/photons.html">
+            <div class="card-top">
+              <span class="card-num">TOPIC 01</span>
+              <span class="live-indicator"><span class="live-dot"></span> Live · Interactive</span>
+            </div>
+            <h3>All About Photons: Creation to Final Fate</h3>
+            <p>QED field excitation, generation in LEDs and blackbodies, room flight at c, and thermal infrared fate.</p>
+            <div class="card-tags"><span class="tag">Photons</span><span class="tag">Room Lifecycle</span></div>
+          </a>
+          <a class="topic-card live-card" href="topics/human-eye.html">
+            <div class="card-top">
+              <span class="card-num">TOPIC 02</span>
+              <span class="live-indicator"><span class="live-dot"></span> Live · Interactive</span>
+            </div>
+            <h3>How the Human Eye Works</h3>
+            <p>Cornea &amp; lens refraction, ciliary accommodation, rods vs. cones, and the retinal molecular switch.</p>
+            <div class="card-tags"><span class="tag">Vision</span><span class="tag">Ray-Tracing</span></div>
+          </a>
+          <a class="topic-card live-card" href="topics/reflection-scattering.html">
+            <div class="card-top">
+              <span class="card-num">TOPIC 03</span>
+              <span class="live-indicator"><span class="live-dot"></span> Live · Interactive</span>
+            </div>
+            <h3>Reflection and Scattering of Light</h3>
+            <p>Law of reflection (mirrors vs. rough walls), Rayleigh scattering (blue sky/red sunset), and Mie scattering.</p>
+            <div class="card-tags"><span class="tag">Reflection</span><span class="tag">Rayleigh</span></div>
+          </a>
+          <a class="topic-card live-card" href="topics/light-spectrum.html">
+            <div class="card-top">
+              <span class="card-num">TOPIC 04</span>
+              <span class="live-indicator"><span class="live-dot"></span> Live · Interactive</span>
+            </div>
+            <h3>Colors &amp; the Light Spectrum</h3>
+            <p>The full spectrum from Radio to Gamma rays, visible rainbow colors (380-750 nm), and the 6 invisible bands.</p>
+            <div class="card-tags"><span class="tag">EM Spectrum</span><span class="tag">Rainbow</span></div>
+          </a>
+          <a class="topic-card live-card" href="topics/casper-film.html">
+            <div class="card-top">
+              <span class="card-num">TOPIC 05</span>
+              <span class="live-indicator"><span class="live-dot"></span> Live · Interactive</span>
+            </div>
+            <h3>Casper Cloaking Film</h3>
+            <p>How smart privacy glass blacks out polarized LCD/LED screens while people and rooms remain 100% visible.</p>
+            <div class="card-tags"><span class="tag">Polarization</span><span class="tag">Smart Glass</span></div>
+          </a>
         </div>
-      </div>
+      </section>
+    </div>
 
-      <div class="topic-grid">
-        <!-- Topic 01: Live -->
-        <a class="topic-card" href="topics/photons.html" data-category="quantum-optics">
-          <div class="card-top">
-            <span class="card-num">TOPIC 01</span>
-            <span class="badge badge-live">Live · Interactive</span>
-          </div>
-          <h3>All About Photons: Creation, Room Journey &amp; Final Fate</h3>
-          <p>
-            What a photon is in QED, every mechanism that generates light (atoms, LEDs, blackbody heat), what happens
-            inside a room nanosecond-by-nanosecond, and where every photon ultimately goes.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Quantum Optics</span>
-            <span class="tag">Room Simulator</span>
-            <span class="tag">EM Spectrum</span>
-            <span class="tag">Phonons &amp; IR</span>
-          </div>
-        </a>
-
-        <!-- Topic 02: Live -->
-        <a class="topic-card" href="topics/human-eye.html" data-category="quantum-optics">
-          <div class="card-top">
-            <span class="card-num">TOPIC 02</span>
-            <span class="badge badge-live">Live · Interactive</span>
-          </div>
-          <h3>How the Human Eye Works</h3>
-          <p>
-            How the eye focuses light, rods vs. cones, and the molecular switch that turns photons into brain signals.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Optics</span>
-            <span class="tag">Eye Ray-Tracing</span>
-            <span class="tag">Rods &amp; Cones</span>
-            <span class="tag">Retinal Switch</span>
-          </div>
-        </a>
-
-        <!-- Topic 03: Live -->
-        <a class="topic-card" href="topics/reflection-scattering.html" data-category="quantum-optics">
-          <div class="card-top">
-            <span class="card-num">TOPIC 03</span>
-            <span class="badge badge-live">Live · Interactive</span>
-          </div>
-          <h3>Reflection and Scattering of Light</h3>
-          <p>
-            Law of reflection (mirrors vs. rough surfaces), Rayleigh scattering (why the sky is blue &amp; sunsets are red), and Mie scattering (why clouds are white).
-          </p>
-          <div class="card-tags">
-            <span class="tag">Wave Optics</span>
-            <span class="tag">Reflection Lab</span>
-            <span class="tag">Rayleigh Scattering</span>
-            <span class="tag">Blue Sky &amp; Sunset</span>
-          </div>
-        </a>
-
-        <!-- Topic 04: Live -->
-        <a class="topic-card" href="topics/light-spectrum.html" data-category="quantum-optics">
-          <div class="card-top">
-            <span class="card-num">TOPIC 04</span>
-            <span class="badge badge-live">Live · Interactive</span>
-          </div>
-          <h3>Colors &amp; the Light Spectrum</h3>
-          <p>
-            Visible rainbow colors (380–750 nm) and all 6 invisible bands of light: Radio, Microwaves, Infrared, UV, X-Rays, and Gamma Rays.
-          </p>
-          <div class="card-tags">
-            <span class="tag">EM Spectrum</span>
-            <span class="tag">Wave Simulator</span>
-            <span class="tag">Visible Colors</span>
-            <span class="tag">Invisible Light</span>
-          </div>
-        </a>
-
-        <!-- Upcoming Placeholders for Scalability -->
-        <div class="topic-card upcoming" data-category="quantum-optics">
-          <div class="card-top">
-            <span class="card-num">TOPIC 05</span>
-            <span class="badge badge-planned">Upcoming</span>
-          </div>
-          <h3>Electrons, Energy Bands &amp; Semiconductors</h3>
-          <p>
-            How electrons behave inside atoms vs. crystal lattices, why metals conduct, why glass is transparent,
-            and how p-n junctions turn electricity into photons.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Solid State</span>
-            <span class="tag">Bandgaps</span>
-          </div>
-        </div>
-
-        <div class="topic-card upcoming" data-category="thermo">
-          <div class="card-top">
-            <span class="card-num">TOPIC 06</span>
-            <span class="badge badge-planned">Upcoming</span>
-          </div>
-          <h3>Heat, Phonons &amp; Entropy</h3>
-          <p>
-            From microscopic atomic vibrations to temperature, thermal equilibrium, blackbody radiation, and why
-            energy spreads out irreversibly.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Thermodynamics</span>
-            <span class="tag">Statistical Mechanics</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="margin-bottom: 3.5rem;">
-      <h2 style="font-size: 1.35rem; color: var(--text-bright); margin-bottom: 0.9rem;">Fundamental Constants Cheat Sheet</h2>
+    <!-- Fundamental Constants Cheat Sheet -->
+    <section style="margin-top: 4rem; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.3rem; color: var(--text-bright); margin-bottom: 0.9rem;">Fundamental Constants Quick Reference</h2>
       <div class="stat-strip">
         <div class="stat-box">
           <div class="stat-label">Speed of Light (c)</div>
@@ -177,14 +155,14 @@
           <div class="stat-sub">4.136 × 10⁻¹⁵ eV·s</div>
         </div>
         <div class="stat-box">
-          <div class="stat-label">Electron Volt (1 eV)</div>
-          <div class="stat-value">1.602 × 10⁻¹⁹ J</div>
-          <div class="stat-sub">Atomic energy scale</div>
-        </div>
-        <div class="stat-box">
           <div class="stat-label">Boltzmann Constant (k_B)</div>
           <div class="stat-value">1.381 × 10⁻²³ J/K</div>
           <div class="stat-sub">Room T ≈ 295 K → ~25 meV</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Electron Charge (e)</div>
+          <div class="stat-value">1.602 × 10⁻¹⁹ C</div>
+          <div class="stat-sub">Elementary charge unit</div>
         </div>
       </div>
     </section>
@@ -192,11 +170,12 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span>Physics Learning Notes · Static HTML/CSS/JS</span>
-      <span>Ready for GitHub Pages · <a href="topics/photons.html">Start with Topic 01: Photons →</a></span>
+      <span>Physics Learning Notes · 100-Topic Architecture</span>
+      <span>Grouped into 6 Fundamental Pillars · Built for GitHub Pages</span>
     </div>
   </footer>
 
+  <script src="assets/js/topics-data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

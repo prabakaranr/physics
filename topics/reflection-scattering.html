@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reflection and Scattering of Light | Physics Notes</title>
   <meta name="description" content="A simple, interactive guide to how light reflects off surfaces and scatters in the atmosphere—why mirrors reflect, why the sky is blue, and why sunsets are red." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
@@ -15,18 +18,26 @@
         <span>Physics Learning Notes</span>
       </a>
       <nav class="nav-links">
-        <a href="../index.html">All Concepts</a>
-        <a href="photons.html">01 · Photons</a>
-        <a href="human-eye.html">02 · Human Eye</a>
-        <a href="reflection-scattering.html" class="active">03 · Reflection &amp; Scattering</a>
-        <a href="light-spectrum.html">04 · Colors &amp; Spectrum</a>
+        <a href="../index.html">All Topics</a>
+        <div class="topic-dropdown-wrap">
+          <button id="jump-topics-btn" class="theme-btn" type="button">📑 Jump to Topic ▾</button>
+          <div id="jump-topics-menu" class="topic-dropdown-menu"></div>
+        </div>
         <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
       </nav>
     </div>
   </header>
 
   <main class="container" style="max-width: 920px;">
-    <section class="hero" style="padding-bottom: 1.5rem;">
+    <nav class="topic-breadcrumb" aria-label="Breadcrumb" style="margin-top: 1.5rem;">
+      <a href="../index.html">Physics Hub</a>
+      <span class="sep">/</span>
+      <a href="../index.html#domain-optics-waves">Light &amp; Optics</a>
+      <span class="sep">/</span>
+      <span>Topic 03: Reflection &amp; Scattering</span>
+    </nav>
+
+    <section class="hero" style="padding-top: 1rem; padding-bottom: 1.5rem;">
       <div class="hero-eyebrow">Topic 03 · Wave Optics</div>
       <h1>Reflection and Scattering of Light</h1>
       <p class="lead">
@@ -175,6 +186,9 @@
           </table>
         </div>
       </section>
+
+      <!-- Next / Previous Topic Navigator -->
+      <div id="topic-nav-footer" class="topic-nav-footer"></div>
     </article>
   </main>
 
@@ -185,6 +199,7 @@
     </div>
   </footer>
 
+  <script src="../assets/js/topics-data.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/scattering-sim.js"></script>
 </body>

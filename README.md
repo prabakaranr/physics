@@ -1,73 +1,63 @@
 # Physics Learning Notes
 
-An interactive, static GitHub Pages site documenting physics concepts from first principles, complete with visual explanations and browser-based simulations.
+An interactive, modern static web application documenting 100+ physics concepts from first principles, complete with visual diagrams and real-time browser simulations.
 
-## Topics
+## 🏛️ The 6 Fundamental Physics Pillars
 
-1. **[All About Photons: Creation, Room Journey & Final Fate](topics/photons.html)**
-   - Fundamental photon properties & QED wave-particle duality
-   - Interactive EM Spectrum & Photon Calculator
-   - Photon generation mechanisms (atomic transitions, LED bandgaps, blackbody thermal radiation, accelerating charges, annihilation)
-   - Interactive Photon Generation Lab
-   - Step-by-step lifecycle of light inside a room (~13 ns per bounce, reflection, color absorption, refraction, thermal phonons, infrared re-emission, and window escape)
-   - Interactive Room Photon Simulator
+1. **🔮 Light, Optics & Waves** (Topics 01–08+)
+   - **[01. All About Photons: Creation to Final Fate](topics/photons.html)** (Live · Interactive)
+   - **[02. How the Human Eye Works](topics/human-eye.html)** (Live · Interactive)
+   - **[03. Reflection and Scattering of Light](topics/reflection-scattering.html)** (Live · Interactive)
+   - **[04. Colors & the Light Spectrum (Visible & Invisible)](topics/light-spectrum.html)** (Live · Interactive)
+   - **[05. Casper Cloaking Film & Polarization](topics/casper-film.html)** (Live · Interactive)
+   - *06. Refraction, Snell's Law & Fiber Optics* (Roadmap)
+   - *07. Wave Interference & Young's Double Slit* (Roadmap)
+   - *08. Diffraction & Optical Resolution Limits* (Roadmap)
 
-2. **[How the Human Eye Works](topics/human-eye.html)**
-   - Cornea and lens optics, pupil aperture, and inverted retinal imaging
-   - Interactive Eye Ray-Tracing & Accommodation Simulator (Normal, Myopia, Hyperopia, corrective lenses)
-   - Rods (~120M) vs. Cones (~6M)
-   - The Molecular Switch (retinal 11-cis to all-trans isomerization) & Interactive Lab
-   - Interactive Blind Spot test
+2. **⚛️ Quantum & Atomic Physics** (Topics 09–13+)
+   - *09. Bohr Atom & Quantized Orbitals*
+   - *10. Wave-Particle Duality & de Broglie Matter Waves*
+   - *11. Heisenberg's Uncertainty Principle*
+   - *12. Quantum Tunneling*
+   - *13. Electron Spin & Pauli Exclusion Principle*
 
-3. **[Reflection and Scattering of Light](topics/reflection-scattering.html)**
-   - The Law of Reflection: Angle of incidence = Angle of reflection ($\theta_i = \theta_r$)
-   - Specular (mirror) vs. Diffuse (rough wall/paper) reflection & Interactive Reflection Lab
-   - Rayleigh scattering ($1/\lambda^4$ rule) — why the sky is blue and sunsets are red
-   - Interactive Sky & Sunset Scattering Lab
-   - Mie scattering — why clouds and fog appear white
+3. **⚡ Electricity & Magnetism** (Topics 14–17+)
+   - *14. Electric Charges & Coulomb's Law*
+   - *15. Magnetic Fields & The Lorentz Force*
+   - *16. Electromagnetic Induction & Faraday's Law*
+   - *17. Maxwell's Equations*
 
-4. **[Colors & the Spectrum of Light (Visible & Invisible)](topics/light-spectrum.html)**
-   - The full electromagnetic spectrum from Radio to Gamma rays
-   - Interactive Full Spectrum Wave Simulator (wavelength vs. frequency & energy)
-   - The visible rainbow sliver (380 nm – 750 nm) & Interactive Color Wavelength Tuner
-   - The 6 invisible bands of light (Radio, Microwave, Infrared, UV, X-Ray, Gamma Ray)
-   - Why human eyes cannot detect invisible light
+4. **🔥 Thermodynamics & Heat** (Topics 18–20+)
+   - *18. Heat, Temperature & Kinetic Motion*
+   - *19. The Second Law of Thermodynamics & Entropy*
+   - *20. Heat Engines & The Carnot Limit*
 
-## Structure
+5. **🪐 Relativity & Cosmology** (Topics 21–24+)
+   - *21. Special Relativity: Time Dilation & Length Contraction*
+   - *22. Mass-Energy Equivalence: E = mc²*
+   - *23. General Relativity & Curved Spacetime*
+   - *24. Black Holes & Event Horizons*
 
-```text
-.
-├── .nojekyll               # Ensures GitHub Pages serves all static files directly
-├── index.html              # Concept Hub with search & category filters
-├── topics/
-│   └── photons.html        # Topic 01: All About Photons
-└── assets/
-    ├── css/style.css       # Shared dark/light theme & layout styles
-    └── js/
-        ├── main.js         # Theme toggle, search/filter, TOC scrollspy
-        └── photons-sim.js  # Interactive HTML5 Canvas physics simulations
-```
+6. **🏎️ Mechanics & Fluid Dynamics** (Topics 25–26+)
+   - *25. Newton's Laws & Momentum Conservation*
+   - *26. Bernoulli's Principle & Aerodynamic Lift*
 
-## Preview Locally
+---
 
-You can open `index.html` directly in any browser, or run a lightweight local HTTP server:
+## 🛠️ Scalable 100-Topic Architecture
+
+- **`assets/js/topics-data.js`**: Central catalog of all domains and topics. Adding a new topic only requires appending an object here!
+- **`assets/js/main.js`**: Dynamically generates grouped shelves, live search with `/` keyboard shortcut, and auto-generates Previous/Next navigation links.
+- **`index.html`**: Modern hub with a learning progress bar, instant domain filtering, and stats counters.
+- **`topics/*.html`**: Lightweight, visual, interactive topic pages with breadcrumbs and a **Jump to Topic** menu.
+
+## 🚀 Preview Locally & Deploy
 
 ```bash
+# Preview locally
 python -m http.server 8000
+# Open http://localhost:8000
 ```
 
-Then visit `http://localhost:8000`.
-
-## Deploying to GitHub Pages
-
-1. Commit and push to the `main` branch.
-2. Open the repository on GitHub → **Settings** → **Pages**.
-3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-4. Select branch **`main`** and folder **`/ (root)`**, then click **Save**.
-5. Your site will be live at `https://prabakaranr.github.io/physics/`.
-
-## Adding New Concepts
-
-1. Create a new HTML file under `topics/<concept-name>.html` using `topics/photons.html` as a template.
-2. Add any topic-specific interactive simulation script under `assets/js/`.
-3. Add or update the corresponding card in `index.html`.
+Deploying to GitHub Pages is automatic upon push to `main` via [.github/workflows/static.yml](.github/workflows/static.yml).
+Live at: **`https://prabakaranr.github.io/physics/`**

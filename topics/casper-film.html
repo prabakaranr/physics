@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casper Cloaking Film — The Physics of Smart Privacy Glass | Physics Notes</title>
+  <meta name="description" content="A simple, interactive guide to Casper Cloaking Film: how wave polarization makes computer and TV screens appear pitch black while people and rooms stay completely visible." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge">φ</span>
+        <span>Physics Learning Notes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">All Topics</a>
+        <div class="topic-dropdown-wrap">
+          <button id="jump-topics-btn" class="theme-btn" type="button">📑 Jump to Topic ▾</button>
+          <div id="jump-topics-menu" class="topic-dropdown-menu"></div>
+        </div>
+        <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 920px;">
+    <nav class="topic-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Physics Hub</a>
+      <span class="sep">/</span>
+      <a href="../index.html#domain-optics-waves">Light &amp; Optics</a>
+      <span class="sep">/</span>
+      <span>Topic 05: Casper Film</span>
+    </nav>
+
+    <section class="hero" style="padding-top: 1rem; padding-bottom: 1.5rem;">
+      <div class="hero-eyebrow">Topic 05 · Wave Polarization &amp; Applied Optics</div>
+      <h1>Casper Cloaking Film: The Physics of Smart Privacy Glass</h1>
+      <p class="lead">
+        Applied to office conference room glass, Casper film does something that looks like science fiction:
+        <strong>you can see people, tables, and whiteboards crystal-clearly, but computer monitors and TV screens appear pitch-black!</strong>
+      </p>
+    </section>
+
+    <article class="article-content">
+      <!-- SECTION 1: SIMULATION -->
+      <section id="room-simulator">
+        <h2>1. See It in Action: Interactive Conference Room</h2>
+        <p>
+          Toggle between <strong>Ordinary Glass</strong> and <strong>Casper Film</strong> below.
+          Notice how the presentation TV blanks out completely, while the person, chair, and whiteboard remain 100% visible:
+        </p>
+
+        <!-- SIMULATION 1: CASPER ROOM -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Conference Room Viewed Through Glass</div>
+            <div class="sim-tabs">
+              <button id="film-toggle" class="sim-btn amber-on" type="button">🛡️ Casper Film: ON (Screens Cloaked)</button>
+            </div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="casper-canvas" width="820" height="290"></canvas>
+          </div>
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="polar-angle-slider">Filter Polarization Angle:</label>
+              <input id="polar-angle-slider" type="range" min="0" max="90" step="1" value="90" />
+              <strong id="polar-angle-val" style="font-family: var(--font-mono); color: var(--accent);">90° (Cross-Polarized)</strong>
+            </div>
+          </div>
+          <div id="casper-readout" class="sim-readout"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: THE PHYSICS -->
+      <section id="how-it-works">
+        <h2>2. How Does It Work? (Wave Polarization)</h2>
+        <p>
+          Light is a transverse wave that wiggles perpendicular to its travel direction.
+          The secret to Casper Cloaking Film relies on one crucial difference between screens and real-world objects:
+        </p>
+
+        <div class="cards-2col">
+          <div class="info-card">
+            <h4>📱 1. Screens Emit Polarized Light</h4>
+            <p>
+              Every LCD computer monitor and TV uses polarizing filters to create images.
+              Therefore, <strong>100% of light coming from screens is linearly polarized</strong> (all light waves oscillate along one specific angle).
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>🧍 2. Objects Reflect Unpolarized Light</h4>
+            <p>
+              Light bouncing off people, walls, paper, and coffee cups is <strong>unpolarized</strong>.
+              Its waves wiggle randomly in every possible direction (vertical, horizontal, diagonal).
+            </p>
+          </div>
+        </div>
+
+        <div class="callout amber" style="margin-top: 1.25rem;">
+          <div class="callout-title">The Cross-Polarizer Trick (Malus's Law: I = I₀ cos²θ)</div>
+          Casper film is engineered with an optical polarizing filter oriented at <strong>90° relative to screen light</strong>:
+          <br /><br />
+          • <strong>For the Screen:</strong> Since the angle difference is <i>θ</i> = 90°, Malus's Law dictates:
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<strong><i>I = I₀ · cos²(90°) = 0</i></strong> → <strong>100% of the screen's light is blocked!</strong>
+          <br /><br />
+          • <strong>For People &amp; Furniture:</strong> Because their light oscillates in all random directions, half of it passes through regardless of angle! The room looks completely bright, normal, and transparent.
+        </div>
+      </section>
+
+      <!-- SECTION 3: WAVE POLARIZATION LAB -->
+      <section id="polarization-lab">
+        <h2>3. Interactive Polarization Lab: Malus's Law</h2>
+        <p>
+          Rotate the Casper filter from <strong>0° (parallel)</strong> to <strong>90° (cross-polarized)</strong>
+          to watch the screen's wave get blocked in real time:
+        </p>
+
+        <!-- SIMULATION 2: WAVE POLARIZATION -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Wave Passing Through Polarizing Filter</div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="polar-wave-canvas" width="820" height="230"></canvas>
+          </div>
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="filter-rot-slider">Rotate Casper Filter Angle (θ):</label>
+              <input id="filter-rot-slider" type="range" min="0" max="90" step="1" value="90" />
+              <strong id="filter-rot-val" style="font-family: var(--font-mono); color: var(--accent);">90°</strong>
+            </div>
+          </div>
+          <div id="wave-readout" class="sim-readout"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: LIMITATIONS -->
+      <section id="limitations">
+        <h2>4. What Can It Cloak (and What Can't It)?</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Object / Display</th>
+                <th>Light Type</th>
+                <th>Does Casper Cloak It?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>LCD Computer Monitors &amp; Laptops</strong></td>
+                <td>Linearly Polarized</td>
+                <td><strong style="color: #34d399;">✓ YES — Turns Pitch Black</strong></td>
+              </tr>
+              <tr>
+                <td><strong>LED / LCD Conference Room TVs</strong></td>
+                <td>Linearly Polarized</td>
+                <td><strong style="color: #34d399;">✓ YES — Turns Pitch Black</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Whiteboards &amp; Paper Notes</strong></td>
+                <td>Unpolarized (Diffuse)</td>
+                <td><strong style="color: #f43f5e;">✕ NO — 100% Clearly Visible</strong></td>
+              </tr>
+              <tr>
+                <td><strong>People, Chairs &amp; Office Furniture</strong></td>
+                <td>Unpolarized (Diffuse)</td>
+                <td><strong style="color: #f43f5e;">✕ NO — 100% Clearly Visible</strong></td>
+              </tr>
+              <tr>
+                <td><strong>OLED Displays (some phones/TVs)</strong></td>
+                <td>Unpolarized (Direct organic LEDs)</td>
+                <td><strong style="color: #f43f5e;">✕ NO — Does not use LCD polarizers</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout violet">
+          <div class="callout-title">Try This in Real Life with Polarized Sunglasses!</div>
+          You don't need expensive architectural film to test this! Put on a pair of <strong>polarized sunglasses</strong>,
+          look at your computer monitor or smartphone, and <strong>tilt your head 90 degrees</strong>.
+          The screen will suddenly turn pitch black—the exact same physics behind Casper Cloaking Film!
+        </div>
+      </section>
+
+      <!-- Next / Previous Topic Navigator -->
+      <div id="topic-nav-footer" class="topic-nav-footer"></div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Physics Learning Notes · <a href="../index.html">Back to All Concepts</a></span>
+      <span>Topic 05: Casper Cloaking Film · Built for GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/topics-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/casper-sim.js"></script>
+</body>
+</html>
