@@ -103,8 +103,18 @@ const PHYSICS_TOPICS = [
     isLive: true,
   },
   {
-    id: "refraction-tir",
+    id: "3d-cinema",
     num: "06",
+    title: "How 3D Movies Work",
+    domainId: "optics-waves",
+    path: "topics/3d-cinema.html",
+    summary: "How binocular disparity, RealD circular polarization, and 3D glasses trick our brain into seeing depth on a flat screen.",
+    tags: ["Stereopsis", "3D Glasses", "Polarization", "RealD", "Parallax"],
+    isLive: true,
+  },
+  {
+    id: "refraction-tir",
+    num: "07",
     title: "Refraction, Snell's Law & Fiber Optics",
     domainId: "optics-waves",
     path: "topics/refraction-tir.html",
@@ -114,7 +124,7 @@ const PHYSICS_TOPICS = [
   },
   {
     id: "double-slit",
-    num: "07",
+    num: "08",
     title: "Interference & Young's Double Slit",
     domainId: "optics-waves",
     path: "topics/double-slit.html",
@@ -124,7 +134,7 @@ const PHYSICS_TOPICS = [
   },
   {
     id: "diffraction-resolution",
-    num: "08",
+    num: "09",
     title: "Diffraction & Optical Resolution Limits",
     domainId: "optics-waves",
     path: "topics/diffraction.html",

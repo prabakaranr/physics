@@ -10,9 +10,10 @@ An interactive, modern static web application documenting 100+ physics concepts 
    - **[03. Reflection and Scattering of Light](topics/reflection-scattering.html)** (Live · Interactive)
    - **[04. Colors & the Light Spectrum (Visible & Invisible)](topics/light-spectrum.html)** (Live · Interactive)
    - **[05. Casper Cloaking Film & Polarization](topics/casper-film.html)** (Live · Interactive)
-   - *06. Refraction, Snell's Law & Fiber Optics* (Roadmap)
-   - *07. Wave Interference & Young's Double Slit* (Roadmap)
-   - *08. Diffraction & Optical Resolution Limits* (Roadmap)
+   - **[06. How 3D Movies Work (Stereoscopic Vision & 3D Glasses)](topics/3d-cinema.html)** (Live · Interactive)
+   - *07. Refraction, Snell's Law & Fiber Optics* (Roadmap)
+   - *08. Wave Interference & Young's Double Slit* (Roadmap)
+   - *09. Diffraction & Optical Resolution Limits* (Roadmap)
 
 2. **⚛️ Quantum & Atomic Physics** (Topics 09–13+)
    - *09. Bohr Atom & Quantized Orbitals*

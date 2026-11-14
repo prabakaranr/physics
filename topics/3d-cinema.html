@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How 3D Movies Work — Stereoscopic Vision &amp; 3D Glasses | Physics Notes</title>
+  <meta name="description" content="A simple, interactive guide to how 3D movies work: binocular disparity, RealD circular polarization, red-cyan anaglyph, and why our brain perceives flat screens in 3D." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-badge">φ</span>
+        <span>Physics Learning Notes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">All Topics</a>
+        <div class="topic-dropdown-wrap">
+          <button id="jump-topics-btn" class="theme-btn" type="button">📑 Jump to Topic ▾</button>
+          <div id="jump-topics-menu" class="topic-dropdown-menu"></div>
+        </div>
+        <button id="theme-toggle" class="theme-btn" type="button">☾ Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 920px;">
+    <nav class="topic-breadcrumb" aria-label="Breadcrumb" style="margin-top: 1.5rem;">
+      <a href="../index.html">Physics Hub</a>
+      <span class="sep">/</span>
+      <a href="../index.html#domain-optics-waves">Light &amp; Optics</a>
+      <span class="sep">/</span>
+      <span>Topic 06: How 3D Movies Work</span>
+    </nav>
+
+    <section class="hero" style="padding-top: 1rem; padding-bottom: 1.5rem;">
+      <div class="hero-eyebrow">Topic 06 · Optics &amp; Perception</div>
+      <h1>How 3D Movies Work: Fooled into Depth</h1>
+      <p class="lead">
+        A movie screen is completely flat (2D). How do two slightly different images and a pair of 3D glasses
+        trick our brain into seeing objects floating in mid-air?
+      </p>
+    </section>
+
+    <article class="article-content">
+      <!-- SECTION 1: HOW WE SEE DEPTH -->
+      <section id="stereopsis">
+        <h2>1. How Our Eyes Naturally See Depth</h2>
+        <p>
+          Hold a finger in front of your face. Close your left eye, then close your right eye.
+          Notice how your finger appears to jump horizontally?
+        </p>
+
+        <div class="callout amber">
+          <div class="callout-title">The Secret: 65 mm Eye Separation (Binocular Disparity)</div>
+          Because your eyes sit about <strong>65 mm (~2.5 inches) apart</strong>, each eye captures the world from a slightly different horizontal angle.
+          Your brain combines these two slightly mismatched 2D pictures into one perception of <strong>3D depth (stereopsis)</strong>!
+        </div>
+      </section>
+
+      <!-- SECTION 2: THE 3D MOVIE TRICK & SIMULATOR -->
+      <section id="cinema-simulator">
+        <h2>2. The 3D Movie Trick: Two Images on One Screen</h2>
+        <p>
+          A 3D movie is filmed using <strong>two cameras side-by-side</strong> (spaced 65 mm apart like human eyes).
+          Both images are projected onto the <strong>exact same flat screen</strong> at the same time:
+        </p>
+        <ul>
+          <li><strong>Without Glasses:</strong> Both eyes see both pictures $\rightarrow$ a blurry double outline.</li>
+          <li><strong>With 3D Glasses:</strong> The left lens allows <em>only</em> the left-camera picture through, and the right lens allows <em>only</em> the right-camera picture through. Your brain merges them into 3D!</li>
+        </ul>
+
+        <!-- SIMULATION 1: 3D CINEMA -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <div class="sim-title"><span class="sim-dot"></span> Interactive 3D Cinema Simulator</div>
+            <div class="sim-tabs">
+              <button id="glasses-toggle" class="sim-btn amber-on" type="button">👓 3D Glasses: ON (Merged 3D)</button>
+            </div>
+          </div>
+          <div class="sim-canvas-wrap">
+            <canvas id="threed-canvas" width="820" height="320"></canvas>
+          </div>
+          <div class="sim-controls">
+            <div class="control-group">
+              <label for="depth-slider">3D Parallax Depth:</label>
+              <input id="depth-slider" type="range" min="-70" max="70" step="2" value="-35" />
+              <strong id="depth-val" style="font-family: var(--font-mono); color: var(--accent);">Pop-Out (In Front of Screen)</strong>
+            </div>
+            <div class="control-group">
+              <label for="tech-select">3D Technology:</label>
+              <select id="tech-select">
+                <option value="reald">RealD 3D (Circular Polarization - Modern)</option>
+                <option value="anaglyph">Red / Cyan Glasses (Classic Anaglyph)</option>
+              </select>
+            </div>
+          </div>
+          <div id="threed-readout" class="sim-readout"></div>
+        </div>
+
+        <div class="cards-2col" style="margin-top: 1rem;">
+          <div class="info-card">
+            <h4>🍿 Pop-Out Effect (Negative Parallax)</h4>
+            <p>
+              The left and right screen images are crossed over. The ray lines intersect in front of the screen,
+              making objects appear to <strong>float in mid-air right in front of your face</strong>!
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>🌌 Deep Background (Positive Parallax)</h4>
+            <p>
+              The images are separated so your eyes gaze parallel or slightly outward.
+              The virtual object appears to sit <strong>deep inside a window behind the screen</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: 3D TECHNOLOGIES -->
+      <section id="technologies">
+        <h2>3. How Do the Glasses Separate the Images?</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Technology</th>
+                <th>How It Sorts Left vs. Right</th>
+                <th>Pros &amp; Cons</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>RealD 3D (Circular Polarization)</strong><br /><em>Modern Movie Theaters</em></td>
+                <td>
+                  The projector spins light in a <strong>Clockwise (CW)</strong> spiral for the right eye,
+                  and a <strong>Counter-Clockwise (CCW)</strong> spiral for the left eye.
+                </td>
+                <td>
+                  ✓ Lightweight, cheap glasses.<br />
+                  ✓ <strong>You can tilt your head freely</strong> without losing the 3D effect!<br />
+                  • Requires a special metallic <strong>silver screen</strong> so light doesn't depolarize upon reflection.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Red / Cyan (Anaglyph)</strong><br /><em>Classic 1950s / Comics</em></td>
+                <td>
+                  Left image is tinted red; right image is tinted cyan (blue+green).
+                  The red lens blocks cyan, and the cyan lens blocks red.
+                </td>
+                <td>
+                  ✓ Works on any normal paper or TV screen.<br />
+                  ✕ Ruin natural colors; causes color fatigue.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Active Shutter</strong><br /><em>3D TVs &amp; Gaming</em></td>
+                <td>
+                  The TV alternates between Left and Right frames <strong>120 times every second</strong>.
+                  Battery-powered LCD glasses darken the left eye, then the right eye in sync.
+                </td>
+                <td>
+                  ✓ Perfect full-color HD resolution.<br />
+                  ✕ Heavy, expensive glasses that need charging.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: HEADACHES & CONFLICT -->
+      <section id="headaches">
+        <h2>4. Why Do 3D Movies Give Some People Headaches?</h2>
+        <div class="callout violet">
+          <div class="callout-title">The Vergence-Accommodation Conflict (VAC)</div>
+          In the real world, two muscle systems in your eyes always agree:
+          <br /><br />
+          1. <strong>Vergence:</strong> Your two eyeballs rotate inward toward an object.<br />
+          2. <strong>Accommodation:</strong> Your eye lenses physically adjust focus to that exact same distance.
+          <br /><br />
+          In a 3D movie, an object might pop out to <strong>1 meter</strong> in front of you (your eyes converge inward),
+          but your crystalline lenses must remain focused on the flat screen <strong>10 meters away</strong>!
+          This conflicting muscle reflex confuses the brain and can cause eye strain or mild motion sickness.
+        </div>
+      </section>
+
+      <!-- Next / Previous Topic Navigator -->
+      <div id="topic-nav-footer" class="topic-nav-footer"></div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Physics Learning Notes · <a href="../index.html">Back to All Concepts</a></span>
+      <span>Topic 06: How 3D Movies Work · Built for GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/topics-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/threed-sim.js"></script>
+</body>
+</html>
